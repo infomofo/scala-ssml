@@ -1,4 +1,4 @@
-package com.infomofo.scala_ssml
+package com.infomofo.scalassml
 
 import scala.xml._
 

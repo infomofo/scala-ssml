@@ -1,4 +1,4 @@
-package com.infomofo.scala_ssml
+package com.infomofo.scalassml
 
 import org.scalatest.FlatSpec
 
