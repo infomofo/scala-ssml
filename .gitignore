@@ -1,3 +1,4 @@
 target/
 lib_managed/
 .idea/
+.DS_Store
