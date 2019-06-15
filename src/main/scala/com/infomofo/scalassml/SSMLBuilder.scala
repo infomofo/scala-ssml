@@ -12,7 +12,15 @@ import scala.xml._
   * http://www.w3.org/TR/speech-synthesis/
   */
 case class SSMLBuilder(ssmlTree: Elem = <speak></speak>) {
-  override def toString: String = ssmlTree.toString
+  override def toString: String = scala.xml.Utility.trim(ssmlTree).toString
+
+  def getCardText: String = {
+    ssmlTree.text
+  }
+
+  def trimmedXml: Node = {
+    scala.xml.Utility.trim(ssmlTree)
+  }
 
   private def append(newChild: Node): SSMLBuilder = {
     SSMLBuilder(ssmlTree.copy(child = ssmlTree.child ++ newChild ++ Text(" ")))
@@ -23,7 +31,7 @@ case class SSMLBuilder(ssmlTree: Elem = <speak></speak>) {
   }
 
   def comma(): SSMLBuilder = {
-    append(<break strength="medium"/>)
+    append(<break strength="weak"/>)
   }
 
   def pause(ms: Int): SSMLBuilder = {
@@ -31,15 +39,21 @@ case class SSMLBuilder(ssmlTree: Elem = <speak></speak>) {
   }
 
   def paragraph(s: SSMLBuilder): SSMLBuilder = {
-    append(<p>{s.ssmlTree.child}</p>)
+    append(<p>
+      {s.ssmlTree.child}
+    </p>)
   }
 
   def sentence(s: SSMLBuilder): SSMLBuilder = {
-    append(<s>{s.ssmlTree.child}</s>)
+    append(<s>
+      {s.ssmlTree.child}
+    </s>)
   }
 
-  def sentence (s: String): SSMLBuilder = {
-    append(<s>{s}</s>)
+  def sentence(s: String): SSMLBuilder = {
+    append(<s>
+      {s}
+    </s>)
   }
 
   def text(s: String): SSMLBuilder = {
@@ -47,18 +61,24 @@ case class SSMLBuilder(ssmlTree: Elem = <speak></speak>) {
   }
 
   def sayAs(s: String, interpretAs: String): SSMLBuilder = {
-    append(<say-as interpret-as={interpretAs}>{s}</say-as>)
+    append(<say-as interpret-as={interpretAs}>
+      {s}
+    </say-as>)
   }
 
   def characters(s: String): SSMLBuilder = {
     sayAs(s, "characters")
   }
 
-  def alias(s:String, alias: String): SSMLBuilder = {
-    append(<sub alias={alias}>{s}</sub>)
+  def alias(s: String, alias: String): SSMLBuilder = {
+    append(<sub alias={alias}>
+      {s}
+    </sub>)
   }
 
-  def ipaPhoneme(s:String, p:String): SSMLBuilder = {
-    append(<phoneme alphabet="ipa" ph={p}>{s}</phoneme>)
+  def ipaPhoneme(s: String, p: String): SSMLBuilder = {
+    append(<phoneme alphabet="ipa" ph={p}>
+      {s}
+    </phoneme>)
   }
 }
