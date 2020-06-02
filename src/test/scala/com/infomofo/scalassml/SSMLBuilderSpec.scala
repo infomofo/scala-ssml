@@ -17,10 +17,10 @@ class SSMLBuilderSpec extends FlatSpec {
     assert (
       SSMLBuilder()
         .text("hello")
-        .pause(1000)
+        .pause(1)
         .text("goodbye")
         .trimmedXml ===
-        <speak>hello<break time="1000ms"/>goodbye</speak>
+        <speak>hello<break time="1s"/>goodbye</speak>
     )
   }
 }
