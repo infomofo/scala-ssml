@@ -34,8 +34,8 @@ case class SSMLBuilder(ssmlTree: Elem = <speak></speak>) {
     append(<break strength="weak"/>)
   }
 
-  def pause(ms: Int): SSMLBuilder = {
-    append(<break time={ms + "ms"}/>)
+  def pause(s: Int): SSMLBuilder = {
+    append(<break time={s + "s"}/>)
   }
 
   def paragraph(s: SSMLBuilder): SSMLBuilder = {
