@@ -1,6 +1,8 @@
 scala-ssml
 ==========
 
+![Scala CI](https://github.com/infomofo/scala-ssml/workflows/Scala%20CI/badge.svg)
+
 This library allows you to easily generate Speech Synthesis Markup Language (SSML) with Scala.
 
 SSML is documented [here](http://www.w3.org/TR/speech-synthesis),
@@ -9,7 +11,16 @@ SSML is documented [here](http://www.w3.org/TR/speech-synthesis),
 - Alexa Skills (which only supports a subset of the official ssml tags, documented [here](https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html))
 - Chrome Browser speechSynthesis fragments, documented [here](https://developer.chrome.com/extensions/tts)
 
-And the implementation for each platform differs slightly.
+Dependency
+----------
+
+This dependency can be imported into any scala project using:
+
+```scala
+lazy val scalaSsml = RootProject(uri("git://github.com/infomofo/scala-ssml.git#v0.4.0"))
+```
+
+The library is currently compiled for scala versions `2.11.12`, `2.12.11`, and `2.13.2`.
 
 Basic Usage
 ------------
