@@ -2,3 +2,8 @@ target/
 lib_managed/
 .idea/
 */.DS_Store
+
+# Temporary build tools (should be downloaded locally as needed)
+sbt/
+sbt-*.tgz
+cs
