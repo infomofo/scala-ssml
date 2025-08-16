@@ -9,7 +9,7 @@ ThisBuild / crossScalaVersions := Seq("2.11.12", "2.12.11")
 lazy val root = (project in file("."))
   .settings(
     name := "scala-ssml",
-    libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "2.2.0",
+    libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "2.4.0",
     libraryDependencies += scalaTest % Test
   )
 
