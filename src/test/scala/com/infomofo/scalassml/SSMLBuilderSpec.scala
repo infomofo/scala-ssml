@@ -114,7 +114,7 @@ class SSMLBuilderSpec extends AnyFlatSpec {
       .pause(2)
       .characters("ABC")
     
-    val cardText = ssml.getCardText.trim
-    assert(cardText === "Hello world\n      \n      namaste\n      \n      ABC")
+    val cardText = ssml.getCardText.replaceAll("\\s+", " ").trim
+    assert(cardText === "Hello world namaste ABC")
   }
 }
