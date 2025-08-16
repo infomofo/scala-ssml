@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "scalameta.metals",
+    "github.copilot",
+    "github.copilot-chat",
+    "scala-lang.scala"
+  ]
+}

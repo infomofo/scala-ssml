@@ -1,0 +1,19 @@
+{
+  "files.watcherExclude": {
+    "**/target": true
+  },
+  "metals.sbtScript": "./sbt",
+  "metals.serverVersion": "latest.snapshot",
+  "metals.showImplicitArguments": true,
+  "metals.showInferredType": true,
+  "files.exclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/target": true
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "scala.suggest.bracelessSyntax.enabled": false
+}

@@ -52,6 +52,23 @@ Running Tests
 
 Tests can be run using `sbt test`.
 
+GitHub Copilot Development Setup
+--------------------------------
+
+This repository is optimized for GitHub Copilot development. To get the best experience:
+
+1. **Quick Setup**: Run `./setup-copilot.sh` to configure your development environment
+2. **VS Code**: Install the Metals and GitHub Copilot extensions  
+3. **IntelliJ IDEA**: Install the Scala and GitHub Copilot plugins
+4. **Code Formatting**: Use `sbt scalafmtAll` to format code consistently
+
+The project includes:
+- VS Code settings with Metals configuration
+- Scalafmt configuration for consistent code style
+- Comprehensive ScalaDoc comments for better AI understanding
+- Type annotations and clear naming conventions
+- Development guides in `DEVELOPMENT.md` and `.copilot-context.md`
+
 Testing SSML pronunciation
 --------------------------
 

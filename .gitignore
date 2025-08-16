@@ -2,3 +2,34 @@ target/
 lib_managed/
 .idea/
 */.DS_Store
+
+# VS Code - keep extensions.json and settings.json but exclude workspace-specific files
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/*.code-workspace
+
+# Metals - exclude all generated files
+.metals/
+.bloop/
+
+# Scala specific
+*.log
+*.jar
+!project/plugins.sbt
+
+# SBT specific
+project/boot/
+project/plugins/project/
+project/target/
+
+# Bloop
+project/metals.sbt
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# GitHub Copilot workspace cache
+.copilot/
